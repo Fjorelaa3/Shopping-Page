@@ -80,7 +80,7 @@ buyNow.addEventListener('click', () => {
 
 });
 
-function setNewPoints (cartCost){
+/*function setNewPoints (cartCost){
  
     var points={newPoints: cartCost};
     $.ajax({
@@ -96,7 +96,7 @@ function setNewPoints (cartCost){
 
     });
   
-}
+}*/
 
 
 function formValidation() {
@@ -166,108 +166,3 @@ function formValidation() {
 
 
 }
-
-
-
-
-function sendData(details) {
-    let cartItems = localStorage.getItem("productsInCart");
-    /* cartItems =JSON.parse(cartItems);
-     let entries = Object.entries(cartItems);
-     var products2=[];
-     for(i=0;i<entries.length;i++){
-         products2[i]=entries[i][1];
-     }
-   
- */
-    let cartCost = localStorage.getItem('totalCost');
-    cartCost = parseInt(cartCost);
-    var tempParams = {
-        from_name: details.Name,
-        email: details.Email,
-        phone: details.Phone,
-        total: cartCost,
-        productList: cartItems
-
-    };
-
-    console.log(cartItems);
-
-
-    emailjs.send('service_r1qaaj8', 'template_eww2bfq', tempParams).then(function (res) {
-        console.log("succes ", res.status);
-    });
-
-    emailjs.send('service_r1qaaj8', 'template_2y4pins', tempParams).then(function (res) {
-        console.log("succes ", res.status);
-    });
-
-
-
-
-    // Get the modal
-    var modal = document.getElementById("myModal");
-    /*
-    // Get the button that opens the modal
-    var btn = document.getElementById("buyNow");
-    */
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on the button, open the modal
-    //btn.onclick = function() {}
-    modal.style.display = "block";
-
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-
-    document.forms.RegForm.Name.value = "";
-    document.forms.RegForm.EMail.value = "";
-    document.forms.RegForm.Telephone.value = "";
-    document.forms.RegForm.Address.value = "";
-    displayCart2();
-}
-
-
-function displayCart2(){
-   
-localStorage.clear();
-   let productContainer =document.querySelector(".products");
-  
-    if(  productContainer){
-       //console.log('Jemi ne cartPage dhe ne local Storage ka dicka');
-        productContainer.innerHTML='';
-    }
-
-    let productTotal1 =document.querySelector(".cart-total1");
-    if(  productTotal1){
-        productTotal1.innerHTML='';  
-        productTotal1.innerHTML += `
-         <tr>
-            <td>Cart Subtotal</td>
-            <td> $0,00</td>
-        </tr>
-        <tr>
-            <td>Shipping</td>
-            <td>Free</td>
-        </tr>
-        <tr>
-            <td><strong>Total:</strong></td>
-            <td><strong> $0,00</strong></td>
-         </tr>
-        
-         `;
-    }
-
-    document.querySelector('.fa-shopping-bag span').textContent =0;
-} 
