@@ -2,26 +2,34 @@
 	<html lang="en">
 
 	<head>
+		<!-- Përcakto kodin e karaktereve dhe metën për kompatibilitet -->
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<!-- Titulli i faqes -->
 		<title>Check Out</title>
+		<!-- Lidh stylesheet-et dhe ikonat -->
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 		<link rel="stylesheet" href="./styles/style.css">
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
 		</script>
+		<!-- Lidh skriptën për EmailJS -->
 		<script type="text/javascript">
+			// Inicializo EmailJS
 			(function () {
-				emailjs.init("aHxlyyt3xBnTZ_q4O");
+				emailjs.init("AIugjdsCqzrUKUB9t");
 			})();
 		</script>
 	</head>
 
 	<body>
+		<!-- Seksioni i header-it -->
 		<section id="header">
+			<!-- Logo dhe navbar -->
 			<a href='#'><img src="img/logo.png " class="logo" alt=" "></a>
 			<div>
 				<ul id="navbar">
+					<!-- Lidhjet e navigimit -->
 					<li><a href="index.html">Home</a></li>
 					<li><a href="shop.html">Shop</a></li>
 					<li><a href="contact.html">Contact</a></li>
@@ -30,13 +38,15 @@
 				</ul>
 			</div>
 		</section>
-
+        <!-- Seksioni i header-it të dytë -->
 		<section id="page-header2">
+			<!-- Titulli dhe përshkrimi -->
 			<h2>#check-out</h2>
 			<p>Let's buy</p>
 		</section>
-
+         <!-- Seksioni i karrocës -->
 		<section id="cart" class="section-p1">
+			<!-- Tabela e produkteve në karrocë -->
 			<table width="100%">
 				<thead>
 					<tr>
@@ -54,10 +64,11 @@
 
 			</table>
 		</section>
-
+        <!-- Seksioni i shtimit të detajeve dhe totali i karrocës -->
 		<section id="cart-add" class="section-p1">
 			<div class="details">
 				<form name="RegForm" action="">
+					<!-- Detajet personale të përdoruesit -->
 					<h3>Give your details</h3>
 					<span id="nameError"></span><input type="text" name="Name" placeholder="Your Name">
 					<span id="emailError"></span><input type="text" name="EMail" placeholder="Email">
@@ -68,6 +79,7 @@
 				</form>
 				<p>*Please fill out all fields</p>
 			</div>
+			<!-- Totali i karrocës dhe butoni për blerje -->
 			<div class="subtotal">
 				<h3>Cart Totals</h3>
 				<table class="cart-total1">
@@ -86,8 +98,8 @@
 					</tr>
 
 				</table>
-				<!---->
-
+				
+                <!-- Butoni për blerje dhe modalat për konfirmim -->
 				<button id="buyNow" class="normal">Buy Now</button>
 				<!-- Trigger/Open The Modal -->
 
@@ -116,9 +128,10 @@
 			</div>
 
 		</section>
-
+         <!-- Seksioni i fundit (footer) -->
 		<footer class="section-p1">
 			<div class="col">
+				  <!-- Informacione kontakti dhe ikona për rrjetet sociale -->
 				<h4>Contact</h4>
 				<p><strong>Address:</strong>Epoka University,Tiranë-Rinas km 12</p>
 				<p><strong>Phone:</strong>+355 69 99 99 999</p>
@@ -135,6 +148,7 @@
 				</div>
 			</div>
 			<div class="col">
+				 <!-- Lidhjet për faqen dhe politikën e privatësisë -->
 				<h4>About</h4>
 				<a href="#">About</a>
 				<a href="contact.html">Contact</a>
@@ -144,6 +158,7 @@
 			</div>
 	
 			<div class="col install">
+				<!-- Informacione për instalimin e aplikacionit dhe ikona e pagesave -->
 				<h4>Install App</h4>
 				<p>From App Store or Google Play</h4>
 				<div class="row">
@@ -155,8 +170,9 @@
 						
 			</div>
 		</footer>
-
+        <!-- Skriptat për menaxhimin e ngjarjeve dhe skriptat e tjera -->
 		<script>
+			
 			const bar = document.getElementById('bar');
 			const close = document.getElementById('close');
 			const nav = document.getElementById('navbar');
