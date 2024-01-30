@@ -7,5 +7,6 @@ CREATE TABLE if NOT EXISTS customers(
   age INT  ,
   password  VARCHAR(100) ,
   points INT ,
-  username  VARCHAR(100) 
+  username  VARCHAR(100) ,
+  gender VARCHAR(1)
 ) ;
